@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+int main(){
+ char p[]="SEND";
+ int k[]={3,19,5,7};
+ int i;
+
+ for(i=0;p[i];i++)
+   printf("%c", (p[i]-'A'+k[i])%26+'A');
+}

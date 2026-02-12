@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+int main(){
+ int msg=8, block=8;
+
+ if(msg%block==0)
+   printf("Extra padding block added\n");
+ else
+   printf("Padding needed\n");
+}

@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+char plain[26]  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+char cipher[26] = "QWERTYUIOPASDFGHJKLZXCVBNM";
+
+void encrypt(char text[]) {
+    int i, j;
+    for (i = 0; text[i] != '\0'; i++) {
+        if (isalpha(text[i])) {
+            char ch = toupper(text[i]);
+            for (j = 0; j < 26; j++) {
+                if (plain[j] == ch) {
+                    text[i] = cipher[j];
+                    break;
+                }
+            }
+        }
+    }
+}
+
+void decrypt(char text[]) {
+    int i, j;
+    for (i = 0; text[i] != '\0'; i++) {
+        if (isalpha(text[i])) {
+            char ch = toupper(text[i]);
+            for (j = 0; j < 26; j++) {
+                if (cipher[j] == ch) {
+                    text[i] = plain[j];
+                    break;
+                }
+            }
+        }
+    }
+}
+
+int main() {
+    char text[100];
+
+    printf("Enter plaintext: ");
+    gets(text);
+
+    encrypt(text);
+    printf("Encrypted text: %s\n", text);
+
+    decrypt(text);
+    printf("Decrypted text: %s\n", text);
+
+    return 0;
+}

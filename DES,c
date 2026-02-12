@@ -1,0 +1,11 @@
+#include<stdio.h>
+
+int main(){
+ unsigned long pt=0x12345678, key=0x0F0F0F0F;
+
+ unsigned long ct = pt ^ key;   
+ unsigned long dt = ct ^ key;  
+
+ printf("Ciphertext = %lx\n", ct);
+ printf("Decrypted  = %lx\n", dt);
+}
